@@ -12,20 +12,18 @@
     @media (min-width: 640px) {
       width: 70%;
     }
-    .filters {
+
+    .filter-container {
       margin-bottom: var(--size-6);
       display: flex;
       flex-direction: column;
       align-items: left;
-      @media (min-width: 1024px) {
-        flex-direction: row;
-        align-items: center;
-      }
 
       > * {
         margin-right: var(--size-4);
         margin-top: var(--size-4);
       }
+
       :last-child {
         margin-right: 0;
       }
@@ -36,10 +34,17 @@
         }
       }
 
-      .items-per-page-filter {
-        input {
-          width: 4rem;
+      .filters {
+        .update-items {
+          display: flex;
+          align-items: end;
         }
+      }
+
+      .error-message {
+        color: var(--color-red);
+        font-size: var(--size-3_5);
+        padding-top: var(--size-1_5);
       }
     }
 

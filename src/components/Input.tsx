@@ -1,16 +1,27 @@
+import React from "react"
 import "./Input.scss"
 
 export interface InputProps {
-  className?: string
   label: string
-  placeholder: string
+  setErrorMessage: React.Dispatch<React.SetStateAction<string | null>>
+  setValue: React.Dispatch<React.SetStateAction<number>>
+  value: number
 }
 
 export const Input = (props: InputProps) => {
   return (
-    <div className={`input ${props.className ? props.className : ""}`}>
+    <div className={"input"}>
       <label htmlFor={props.label}>{props.label}</label>
-      <input id={props.label} type={"number"} placeholder={props.placeholder} />
+      <input
+        id={props.label}
+        onChange={(e) => {
+          const inputValue = parseInt(e.currentTarget.value)
+          props.setValue(inputValue)
+        }}
+        type={"number"}
+        value={props.value}
+        min={1}
+      />
     </div>
   )
 }

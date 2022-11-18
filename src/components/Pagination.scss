@@ -4,6 +4,7 @@
   justify-content: center;
 
   @media (min-width: 1024px) {
+    width: auto;
     padding-top: var(--size-4);
   }
 
@@ -20,6 +21,12 @@
     border: 0;
     box-sizing: initial;
     padding: 0;
+    font-size: var(--size-3_5);
+
+    margin-right: calc(-1 * var(--size-1));
+    @media (min-width: 640px) {
+      margin-right: var(--size-1);
+    }
 
     .page-content {
       display: flex;
